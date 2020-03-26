@@ -27,9 +27,11 @@ Route::get('/about', function() {
 /* About */
 Route::get('/articles', 'ArticlesController@index');
 Route::post('/articles', 'ArticlesController@store');
-Route::get('/articles/create', 'ArticlesController@create');
+Route::get('/articles/create', 'ArticlesController@create')
+    ->middleware('auth');
 Route::get('/articles/{article}', 'ArticlesController@show')->name('articles.show');
-Route::get('/articles/{article}/edit', 'ArticlesController@edit')->name('articles.edit');
+Route::get('/articles/{article}/edit', 'ArticlesController@edit')->name('articles.edit')
+    ->middleware('auth');
 Route::put('/articles/{article}', 'ArticlesController@update');
 
 
