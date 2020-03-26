@@ -34,3 +34,7 @@ Route::put('/articles/{article}', 'ArticlesController@update');
 
 
 Route::get('/posts/{post}', 'PostController@show');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
